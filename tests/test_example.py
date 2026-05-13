@@ -36,4 +36,6 @@ def test_get_started_link(page: Page):
     automation_page.drag_item_to_drop()
 
     automation_page.wait_for_timeout(5000)
-print("Test completed successfully!")
+    print("Test completed successfully!")
+    print("All assertions passed without exceptions.")
+    print("Test execution finished.")
