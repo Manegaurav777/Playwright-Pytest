@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON = 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -10,19 +14,19 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'python -m pip install -r requirements.txt'
+                bat '"%PYTHON%" -m pip install -r requirements.txt'
             }
         }
 
         stage('Install Playwright Browsers') {
             steps {
-                bat 'python -m playwright install chromium'
+                bat '"%PYTHON%" -m playwright install chromium'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'python -m pytest --headed --video=on --output=test-results --junit-xml=test-results/results.xml -v'
+                bat '"%PYTHON%" -m pytest --headed --video=on --output=test-results --junit-xml=test-results/results.xml -v'
             }
         }
     }
