@@ -2,7 +2,7 @@ from playwright.sync_api import Page
 from .base_page import BasePage
 
 class LoginPage(BasePage):
-    url="https://practicetestautomation.com/practice-test-login/"
+    URL="https://practicetestautomation.com/practice-test-login/"
 
     def goto(self) -> None:
         super().goto(self.URL)
