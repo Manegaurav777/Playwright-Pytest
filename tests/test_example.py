@@ -40,3 +40,4 @@ def test_get_started_link(page: Page):
     print("All assertions passed without exceptions.")
     print("Test execution finished.")
     print("Check video is working fine or not")
+    print("Its Raining in my city")
