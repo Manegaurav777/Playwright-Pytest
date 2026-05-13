@@ -30,7 +30,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat '"%PYTHON%" -m pytest --headed --video=on --output=test-results --junit-xml=test-results/results.xml -v'
+                bat '"%PYTHON%" -m pytest --video=on --output=test-results --junit-xml=test-results/results.xml -v'
             }
         }
     }
