@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
     environment {
         PYTHON = 'C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python314\\python.exe'
     }
