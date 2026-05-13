@@ -3,7 +3,9 @@ pipeline {
 
     triggers {
         pollSCM('* * * * *')
-        cron('0 9 * * *\n0 22 * * *')
+        cron('''TZ=Asia/Kolkata
+0 9 * * *
+0 22 * * *''')
     }
 
     environment {
