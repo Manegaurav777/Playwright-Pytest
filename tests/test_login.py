@@ -12,3 +12,12 @@ def test_login(page: Page):
     Lp.EnterPassword("Password123")
     Lp.ClickSUbmit()
     print("Login test completed successfully!")
+    
+def test_Verify_errorMessage(page: Page): 
+    Lp=LoginPage(page)
+    Lp.goto()
+    Lp.EnterUsername("student")
+    Lp.EnterPassword("Password1234")
+    Lp.ClickSUbmit()
+    Lp.Verify_errorMessage()
+    print("Error message verification test completed successfully!")

@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 from .base_page import BasePage
 
 class LoginPage(BasePage):
@@ -15,3 +15,7 @@ class LoginPage(BasePage):
     
     def ClickSUbmit(self) -> None:
         self.page.get_by_role("button", name="Submit").click()
+    
+    def Verify_errorMessage(self):
+        expect(self.page.locator("//div[@id='error']").text_content("Your password is invalid!"))
+                
