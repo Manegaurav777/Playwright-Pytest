@@ -16,5 +16,9 @@ class LoginPage(BasePage):
     def ClickSUbmit(self) -> None:
         self.page.get_by_role("button", name="Submit").click()
     
-    def Verify_errorMessage(self):
+    def Verify_errorMessageforwrongPassword(self):
         expect(self.page.locator("//div[@id='error']")).to_have_text("Your password is invalid!")
+
+    def Verify_errorMessageForWrongUsername(self):
+        expect(self.page.locator(("//div[@id='error']"))).to_have_text("Your username is invalid!")
+        

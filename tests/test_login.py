@@ -13,11 +13,20 @@ def test_login(page: Page):
     Lp.ClickSUbmit()
     print("Login test completed successfully!")
     
-def test_Verify_errorMessage(page: Page): 
+def test_Verify_errorMessage_wrongPassword(page: Page): 
     Lp=LoginPage(page)
     Lp.goto()
     Lp.EnterUsername("student")
     Lp.EnterPassword("Password1234")
     Lp.ClickSUbmit()
-    Lp.Verify_errorMessage()
+    Lp.Verify_errorMessageforwrongPassword()
     print("Error message verification test completed successfully!")
+    
+def test_Verify_errorMessage_wrongUsername(page: Page):
+    Lp=LoginPage(page)
+    Lp.goto()
+    Lp.EnterUsername("Student1")
+    Lp.EnterPassword("Password1234")
+    Lp.ClickSUbmit()
+    Lp.Verify_errorMessageForWrongUsername()
+    print("Error message verification for wrong username test completed successfully!")
